@@ -4,8 +4,8 @@ import type { AxiosPromise, AxiosInstance, AxiosRequestConfig, Method } from 'ax
 import { COLLECTION_FORMATS, RequiredError, AuthTypeEnum, DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '@redhat-cloud-services/javascript-clients-shared/dist/common';
 import type { RequestArgs } from '@redhat-cloud-services/javascript-clients-shared/dist/common';
 // @ts-ignore
-import { BaseAPI } from '@redhat-cloud-services/javascript-clients-shared/base';
-import { Configuration } from '@redhat-cloud-services/javascript-clients-shared/configuration';
+import { BaseAPI } from '@redhat-cloud-services/javascript-clients-shared/dist/base';
+import { Configuration } from '@redhat-cloud-services/javascript-clients-shared/dist/configuration';
 
 // @ts-ignore
 import type { BehaviorGroup } from '../types';
@@ -17,7 +17,7 @@ export type NotificationResourceV1FindBehaviorGroupsByBundleIdParams = {
   * @type { string }
   * @memberof NotificationResourceV1FindBehaviorGroupsByBundleIdApi
   */
-  bundleId: string,
+  bundleId: string, 
   options?: AxiosRequestConfig
 }
 
