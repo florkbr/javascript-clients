@@ -1,0 +1,13 @@
+name: E2E tests
+description: Run e2e client API tests
+runs:
+  using: "composite"
+  steps:
+    - uses: nrwl/nx-set-shas@v4
+    - uses: './.github/actions/node-cache'
+    - name: Install deps
+      shell: bash
+      run: npm i
+    - name: Test e2e
+      shell: bash
+      run: npm run test:e2e
