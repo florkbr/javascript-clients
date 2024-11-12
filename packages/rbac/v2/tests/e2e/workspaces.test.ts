@@ -6,17 +6,18 @@ import {
   listWorkspaces,
   // patchWorkspace,
   readWorkspace,
-  // updateWorkspace,
   WORKSPACES_API_BASE,
+  // updateWorkspace,
 } from './client';
-import { updateConfig, convertConfig } from './util';
+
 import { AxiosRequestConfig } from 'axios';
 import { WorkspacesWorkspace, WorkspacesWorkspaceTypesQueryParam } from '../../api';
+import { convertConfig, updateConfig } from './util';
 
 const findWorkspaceByName = async (
   workspaceName: string,
   query: WorkspacesWorkspaceTypesQueryParam,
-  axiosConfig: AxiosRequestConfig,
+  axiosConfig?: AxiosRequestConfig,
 ): Promise<WorkspacesWorkspace | null> => {
   const workspaceList = await listWorkspaces(1000, 0, query, axiosConfig);
   for (const workspace of workspaceList.data.data) {
