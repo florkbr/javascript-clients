@@ -9,7 +9,7 @@ import WorkspacesUpdate from '../../../WorkspacesUpdate';
 
 // import { APIFactory } from '@redhat-cloud-services/javascript-clients-shared';
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
-import { WorkspacesWorkspaceListResponse } from '../../../api';
+import { WorkspacesWorkspace, WorkspacesWorkspaceListResponse } from '../../../api';
 import { WorkspacesPatchWorkspaceRequest, WorkspacesUpdateWorkspaceRequest, WorkspacesWorkspaceTypesQueryParam } from '../../..';
 
 import axios from 'axios';
@@ -35,7 +35,7 @@ export const composedWorkspacesApi = APIFactory(
   { axios: axiosInstance, configuration: config },
 );
 
-// --- convenience wrappers for workspace operations
+// --- convenience wrappers for workspace operations ---
 
 export const createWorkspace = async (name: string, description: string, config?: AxiosRequestConfig) => {
   // @ts-ignore
@@ -96,4 +96,20 @@ export const patchWorkspace = async (uuid: string, workspacesPatchReq: Workspace
   const response: AxiosResponse = await composedWorkspacesApi.WorkspacesPatch(uuid, workspacesPatchReq, config);
   expect(response.status).toBe(200);
   return response;
+};
+
+export const findWorkspaceByName = async (
+  workspaceName: string,
+  query: WorkspacesWorkspaceTypesQueryParam,
+  axiosConfig?: AxiosRequestConfig,
+): Promise<WorkspacesWorkspace | null> => {
+  const workspaceList = await listWorkspaces(1000, 0, query, axiosConfig);
+  if (workspaceList.data.data) {
+    for (const workspace of workspaceList.data.data) {
+      if (workspace.name === workspaceName) {
+        return workspace;
+      }
+    }
+  }
+  return null;
 };
