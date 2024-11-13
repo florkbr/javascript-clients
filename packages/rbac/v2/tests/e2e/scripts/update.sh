@@ -27,7 +27,7 @@ jq -n 'input | .headers += [inputs.newHeaders][]' /tmp/workspaces.json cors_head
 echo "Updated header values are:"
 jq '.headers' /tmp/workspaces_updated.json
 
-echo "Re-exporting the OpenAPI spec"
-npx mockoon-cli export --input /tmp/workspaces_updated.json --output /tmp/workspaces_openapi.json --prettify
+#echo "Re-exporting the OpenAPI spec"
+#npx mockoon-cli export --input /tmp/workspaces_updated.json --output /tmp/workspaces_openapi.json --prettify
 
 
