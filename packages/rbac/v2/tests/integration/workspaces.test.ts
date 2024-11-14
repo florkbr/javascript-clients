@@ -1,12 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import {
-  config,
-  createWorkspace,
-  deleteWorkspace,
-  listWorkspaces,
-  readWorkspace,
-  WORKSPACES_API_BASE,
-} from './client';
+import { config, createWorkspace, deleteWorkspace, listWorkspaces, readWorkspace, WORKSPACES_API_BASE } from './client';
 
 import { AxiosRequestConfig } from 'axios';
 import { WorkspacesWorkspaceTypesQueryParam } from '../../api';
