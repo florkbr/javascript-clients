@@ -39,11 +39,11 @@
         "jestConfig": "packages/rbac/jest.config.ts"
       }
     },
-    "e2e": {
+    "integration": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/rbac/jest.e2e.config.ts"
+        "jestConfig": "packages/rbac/jest.integration.config.ts"
       }
     },
     "version": {

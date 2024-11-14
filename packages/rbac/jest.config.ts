@@ -7,5 +7,5 @@ export default {
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/packages/rbac',
-  modulePathIgnorePatterns: ['/node_modules/', '/e2e/'],
+  modulePathIgnorePatterns: ['/node_modules/', '/integration/'],
 };

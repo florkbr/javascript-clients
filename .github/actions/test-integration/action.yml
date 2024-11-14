@@ -1,5 +1,5 @@
-name: E2E tests
-description: Run e2e client API tests
+name: API client integration tests
+description: Run API client integration tests against stubbed services
 runs:
   using: "composite"
   steps:
@@ -8,6 +8,6 @@ runs:
     - name: Install deps
       shell: bash
       run: npm i
-    - name: Test e2e
+    - name: integration test
       shell: bash
-      run: npm run test:e2e
+      run: npm run test:integration
