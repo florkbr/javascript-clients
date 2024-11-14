@@ -7,7 +7,6 @@ import WorkspacesDelete from '../../../WorkspacesDelete';
 import WorkspacesPatch from '../../../WorkspacesPatch';
 import WorkspacesUpdate from '../../../WorkspacesUpdate';
 
-// import { APIFactory } from '@redhat-cloud-services/javascript-clients-shared';
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { WorkspacesWorkspace, WorkspacesWorkspaceListResponse } from '../../../api';
 import { WorkspacesPatchWorkspaceRequest, WorkspacesUpdateWorkspaceRequest, WorkspacesWorkspaceTypesQueryParam } from '../../..';
@@ -18,7 +17,6 @@ import { APIFactory } from '@redhat-cloud-services/javascript-clients-shared/uti
 import { Configuration } from '@redhat-cloud-services/javascript-clients-shared/configuration';
 
 export const WORKSPACES_API_BASE = 'http://localhost:3000/api/rbac/v2';
-// if (!WORKSPACES_API_BASE) throw new Error('WORKSPACES_API_BASE environment variable required');
 export const config: Configuration = new Configuration();
 const axiosInstance = axios.create();
 

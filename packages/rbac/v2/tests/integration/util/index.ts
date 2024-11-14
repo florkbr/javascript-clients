@@ -1,4 +1,3 @@
-// obtains offline access token given clientId and refreshToken values
 import { AxiosRequestConfig } from 'axios';
 import { Configuration } from '@redhat-cloud-services/javascript-clients-shared/configuration';
 
