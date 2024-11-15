@@ -12,5 +12,4 @@ export default {
     url: "http://localhost:3000",
     userAgent: 'Chell',
   },
-  testURL: "http://localhost:3000"
 };
